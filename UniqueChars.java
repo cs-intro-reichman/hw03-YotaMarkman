@@ -1,17 +1,32 @@
 /** String processing exercise 2. */
-public class UniqueChars {
-    public static void main(String[] args) {  
+public class UniqueChars 
+{
+    public static void main(String[] args) 
+	{  
         String str = args[0];
         System.out.println(uniqueChars(str));
     }
-
-    /**
-     * Returns a string which is identical to the original string, 
-     * except that all the duplicate characters are removed,
-     * unless they are space characters.
-     */
-    public static String uniqueChars(String s) {
-        // Replace the following statement with your code
-        return null;
-    }
+    public static String uniqueChars(String word) 
+	{
+        String newWord = "";
+		for ( int i = 0; i < word.length(); i++ )
+		{
+			boolean check = false;
+			char letter = word.charAt(i);
+			for ( int j = 0; j <newWord.length(); j++ )
+			{
+				char letter2 = newWord.charAt(j);
+				if ( letter == letter2 )
+				{
+					check = true;
+				}
+			}
+			if ( check == false || letter == 32  )
+			{
+				newWord = newWord + letter;
+			}
+		}
+		return newWord;
+	}
 }
+			
