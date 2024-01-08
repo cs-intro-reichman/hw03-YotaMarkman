@@ -44,14 +44,13 @@ public class LoanCalc
     public static double bruteForceSolver(double loan, double rate, int n, double epsilon) 
 	{  
     	// Replace the following statement with your code
-		double payment = 1;
-		double increment = 0.0001;
+		double payment = loan/n;
         double balance = loan;
         int i = 0;
         while (balance >= epsilon) 
 		{
             iterationCounter++;
-			payment += increment;
+			payment += epsilon;
             balance = loan;
             for (i = 0; i < n; i++) 
 			{
